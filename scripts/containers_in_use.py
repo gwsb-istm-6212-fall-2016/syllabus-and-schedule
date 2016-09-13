@@ -2,7 +2,9 @@
 
 """Report number of containers in use to AWS CloudWatch as a custom
 metric.  For use in setting AutoScaling policies.  Best run with
-cron.  Note the dependency on requests."""
+cron:
+    * * * * * /home/ec2-user/containers_in_use.py > /dev/null 2>&1
+Note the dependency on requests."""
 
 
 from datetime import datetime
@@ -12,9 +14,13 @@ import requests
 
 
 if __name__ == '__main__':
-    r = requests.get('http://localhost:8000/api/stats')
-    d = r.json()
-    containers_available = d['available']
+    try:
+        r = requests.get('http://localhost:8000/api/stats')
+        d = r.json()
+        containers_available = d['available']
+    except:
+        # assume host is still starting up; will report 0
+        containers_in_use = 0
     containers_in_use = str(20 - containers_available)
     utc_now = datetime.utcnow()
     w3c_stamp = utc_now.strftime('%Y-%m-%dT%H:%M:%SZ')
