@@ -1,0 +1,44 @@
+Always use complete sentences and proper punctuation.
+
+Use Python 3.
+
+Turn your completed notebook (.ipynb) files in to Blackboard.
+
+Commit your notebook (.ipynb) to GitHub.
+
+Your current working directory ("Downloads", etc.) is not necessarily
+the same as mine.  Your executed cell count is not the same as mine.
+
+In future notebooks we'll make a point to keep long output to a minimum.
+
+Good answers:
+
+"The use of the capital 'F' means that the contents of the current
+directory will be shown in a sorted order, and directories will be
+marked with a trailing '/'. The lower-case 'f' means the contents
+will be displayed without marking directories and will be unsorted.
+The single dot '.' references the current directory."
+
+"The double dots are a shortcut to refer to the parent directory.
+In this case, the double dots, used with 'ls', show the contents
+of the parent directory."
+
+"The double dot is the directory above the current working directory.
+In my case, it is '/home/vagrant/Data Warehousing'."
+
+
+Reproducible research - Roger Peng videos
+
+Replication - important but expensive and unique
+Reproducible - data/code available to reproduce methods
+  bridges gap between replication and nothing
+  confirm findings from same inputs, analysis
+
+Research pipeline, article == homework assignment / project
+  use pipeline image?
+  
+Analytic data, code available w/documentation
+  raw data might not be practical or even used
+
+Literate programming - notebooks
+  human and machine readable
