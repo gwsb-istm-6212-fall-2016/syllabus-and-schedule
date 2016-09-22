@@ -9,7 +9,7 @@ import fileinput
 
 def process(line):
     """For each line of input, _____."""
-    print(line.strip())
+    print(line[:-1])
 
 
 for line in fileinput.input():
